@@ -5,27 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 3</title>
     <style>
-        video {
-            margin-top: 20px;
-            width: 560px;
-            height: 315px;
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff0000, #ff4444, #ff8888);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .warning-container {
+            background-color: rgba(255, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        button {
+            padding: 20px 40px;
+            font-size: 24px;
+            background-color: #ff0000;
+            color: white;
             border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            margin: 20px;
+        }
+
+        
+
+        button:hover {
+            background-color: #ff4444;
+            transform: scale(1.2);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+
+        .warning-text {
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 20px;
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>DERNIÈRE CHANCE SINON TU VAS TOUT CASSER ET FLEMME DE RÉPARER !</h1>
-    <p>JE T'AI DIT DE NE PAS CLIQUER !</p>
-    <p>TOI TU VOIS UN BOUTON TU TE SENS OBLIGÉ DE CLIQUER HEIN !!</p>
-    <!-- Bouton redirigeant vers YouTube -->
-    <button onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">
+    <div class="warning-container">
+        <h1>DERNIÈRE CHANCE SINON TU VAS TOUT CASSER ET FLEMME DE RÉPARER !</h1>
+        <p class="warning-text">JE T'AI DIT DE NE PAS CLIQUER !</p>
+        <p class="warning-text">TOI TU VOIS UN BOUTON TU TE SENS OBLIGÉ DE CLIQUER HEIN !!</p>
+    </div>
+    
+    <button id="final-button" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">
         BON BAH JE PEUX PAS T'ARRÊTER HEIN...
     </button>
 
-    <div id="videoContainer"></div>
 
-    <!-- Mise à jour du chemin vers le fichier script.js -->
-    <script src="../js/script.js"></script>
+
+    <script>
+        const finalButton = document.getElementById('final-button');
+        finalButton.addEventListener('mouseover', () => {
+            finalButton.style.transform = 'scale(1.3) rotate(10deg)';
+        });
+        finalButton.addEventListener('mouseout', () => {
+            finalButton.style.transform = 'scale(1) rotate(0deg)';
+        });
+
+        const warningTexts = document.querySelectorAll('.warning-text');
+        warningTexts.forEach(text => {
+            text.style.animation = 'shake 0.5s infinite';
+        });
+    </script>
 </body>
 </html>

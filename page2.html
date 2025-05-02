@@ -6,22 +6,48 @@
     <title>Page 2</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Centrer l'image et le bouton */
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
+        .warning-container {
+            position: relative;
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 0, 0, 0.1);
+            border-radius: 15px;
+
         }
+
+        .duck-container {
+            position: relative;
+            margin: 20px;
+        }
+
+        .duck-container img {
+            max-width: 200px;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+
     </style>
 </head>
-<body id="page-body">
-    <h1>MAIS POURQUOI TU AS CLIQUÉ ? JE T'AI DIT DE NE PAS CLIQUER !</h1>
-    <div class="center-content">
-        <!-- Ajout de l'image CANARD -->
-        <img src="CANARD.JPG" alt="CANARD" style="max-width: 10%; height: auto;">
-        <button onclick="window.location.href='page3.html'">J'AI DIT DE NE PAS CLIQUER</button>
+<body>
+    <div class="warning-container">
+        <h1>MAIS POURQUOI TU AS CLIQUÉ ? JE T'AI DIT DE NE PAS CLIQUER !</h1>
     </div>
-    <script src="script.js"></script>
+    <div class="center-content">
+        <div class="duck-container">
+            <img src="CANARD.JPG" alt="CANARD" id="duck-image">
+        </div>
+        <button id="next-button" onclick="window.location.href='page3.html'">J'AI DIT DE NE PAS CLIQUER</button>
+        <div class="warning-text">⚠️ C'EST TA DERNIÈRE CHANCE ⚠️</div>
+    </div>
+    <script>
+
+        const nextButton = document.getElementById('next-button');
+        nextButton.addEventListener('mouseover', () => {
+            nextButton.style.transform = 'scale(1.2) rotate(5deg)';
+        });
+        nextButton.addEventListener('mouseout', () => {
+            nextButton.style.transform = 'scale(1) rotate(0deg)';
+        });
+    </script>
 </body>
 </html>

@@ -5,14 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Inutile</title>
     <link rel="stylesheet" href="style.css">
-       
+    <style>
+        .mystery-image {
+            max-width: 300px;
+            height: auto;
+            margin: 20px;
+            transition: all 0.5s ease;
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.3));
+        }
+        .mystery-image:hover {
+            transform: scale(1.1) rotate(5deg);
+            filter: drop-shadow(0 0 15px rgba(255,0,0,0.5));
+        }
+    </style>
 </head>
 <body>
-    <h1>AH COMMENT TU MA TROUVER SURTOUT CLIQUE PAS ON TA PAS DIT DE PAS VENIR ICI !!</h1>
-    <button onclick="window.location.href='page2.html'">CLIQUEZ PAS ICI</button>
-    <body id="page-body">
-    </body>
-    <script src="script.js"></script>
-   
+    <div class="center-content">
+        <h1>AH COMMENT TU MA TROUVER SURTOUT CLIQUE PAS ON TA PAS DIT DE PAS VENIR ICI !!</h1>
+        <div class="warning-text"> ATTENTION </div>
+        <img src="7hrl0u.png" alt="Mystère" class="mystery-image">
+        <button id="danger-button" onclick="window.location.href='page2.html'">CLIQUEZ PAS ICI</button>
+        <div class="floating-text">Tu vas le regretter...</div>
+    </div>
+    <script>
+
+        const button = document.getElementById('danger-button');
+        button.addEventListener('mouseover', () => {
+            button.style.transform = 'scale(1.2)';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'scale(1)';
+        });
+    </script>
 </body>
 </html>
