@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        .center-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-<body>
-    <h1>MAIS POURQUOI TU A CLIQUEZ JE TES DIT DE PAS CLIQUEZ!</h1>
-    <button onclick="window.location.href='page3.html'">J'AI DIT CLIQUEZ PAS</button>
+<body id="page-body">
+    <h1>MAIS POURQUOI TU AS CLIQUÉ ? JE T'AI DIT DE NE PAS CLIQUER !</h1>
+    <div class="center-content">
+        <!-- Ajout de l'image CANARD -->
+        <img src="CANARD.JPG" alt="CANARD" style="max-width: 10%; height: auto;">
+        <button onclick="window.location.href='page3.html'">NE CLIQUE PAS</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
